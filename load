@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DIRECTORY=$(cd `dirname $0` && pwd)
+
+echo "Loading ssh key from $DIRECTORY"
+
+if (( "$#" == 1 ))
+then
+
+echo "Adding Key for $1 hours!"
+
+/usr/bin/ssh-add -D
+/usr/bin/ssh-add -t $1H $KEY
+
+elif (( "$# == 0"))
+then
+echo "No hour input detected, defaulting to 1 hour :)"
+
+/usr/bin/ssh-add -D
+/usr/bin/ssh-add -t 1H $KEY
+else
+  echo "Unsupported usage, please supply either no parameters to default to 1 hour, or one parameter for number of hours"
+fi
