@@ -6,4 +6,4 @@ Future improvements:
 
 Possibly add error checking for the hour parameter (i.e. check for integers) 
 
-This is working currently in a Linux shell, will test on OS X later.
+This is working currently in a Linux shell.
